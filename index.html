@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Laser Pointer Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.2/dist/flowbite.min.css"
+    />
+  </head>
+
+  <body class="overflow-hidden">
+    <header
+      class="sticky z-10 m-auto mt-8 flex h-16 w-fit items-center justify-center gap-3 rounded-full bg-slate-800 px-4"
+    >
+      <p class="font-semibold text-white">
+        Press &lsquo;H&rsquo; to toggle menu visibility
+      </p>
+
+      <button
+        data-dropdown-toggle="colorDropdown"
+        data-dropdown-placement="bottom-start"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 hover:bg-slate-100"
+      >
+        <div
+          id="pointer-color-label"
+          class="h-6 w-6 rounded-full bg-red-600"
+        ></div>
+      </button>
+      <div id="colorDropdown" class="hidden">
+        <div
+          class="flex items-center gap-2 rounded-full bg-slate-700 px-4 py-2"
+        ></div>
+      </div>
+      <button
+        data-dropdown-toggle="countDropdown"
+        data-dropdown-placement="bottom-start"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 text-lg font-bold text-white hover:bg-slate-100 hover:text-slate-900"
+      >
+        <span id="pointer-count-label">1</span>
+      </button>
+      <div id="countDropdown" class="hidden">
+        <div
+          class="flex items-center gap-2 rounded-full bg-slate-700 px-4 py-2 text-white"
+        ></div>
+      </div>
+    </header>
+
+    <main
+      class="absolute top-0 left-0 z-0 h-full w-full bg-black"
+      onmousemove="movePointer(event)"
+    ></main>
+
+    <script src="https://unpkg.com/flowbite@1.4.2/dist/flowbite.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
